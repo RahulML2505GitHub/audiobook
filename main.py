@@ -1,11 +1,11 @@
 import pyttsx3
 import PyPDF2
-book = open('oop.pdf', 'rb')
+book = open('sample.pdf', 'rb')
 pdfReader = PyPDF2.PdfFileReader(book)
 pages = pdfReader.numPages
 
 speaker = pyttsx3.init()
-for num in range(7, pages):
+for num in range(pages):
     page = pdfReader.getPage(num)
     text = page.extractText()
     speaker.say(text)
